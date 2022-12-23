@@ -79,7 +79,6 @@ public class AI : MonoBehaviour
                         Debug.DrawRay(new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), transform.forward / 3, Color.green);
                         if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), transform.forward, out enemyCast, 5))
                         {
-                            GetComponent<Animator>().SetBool("Attacking", true);
                             if (enemyCast.transform.tag == "Enemy")
                             {
                                 Attack();
@@ -89,7 +88,6 @@ public class AI : MonoBehaviour
                     else if (enemydistance > detectionRange)
                     {
                         state = storageState;
-                        GetComponent<Animator>().SetBool("Attacking", false);
                         attacked = false;
                     }
 
@@ -180,7 +178,6 @@ public class AI : MonoBehaviour
                     agent.destination = leader.transform.position;
                     if (Physics.Raycast(new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), transform.forward, out leaderCast, 5))
                     {
-                        GetComponent<Animator>().SetBool("Attacking", true);
                         if (leaderCast.transform.gameObject.tag == "Leader")
                         {
                             LeaderAttack();

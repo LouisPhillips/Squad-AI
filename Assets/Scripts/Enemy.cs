@@ -71,7 +71,6 @@ public class Enemy : MonoBehaviour
         {
             case enumState.Idle:
                 {
-                    GetComponent<Animator>().SetBool("Walk", false);
                     wanderDelay += Time.deltaTime;
                     if (wanderDelay > wanderEvery)
                     {
@@ -115,7 +114,6 @@ public class Enemy : MonoBehaviour
                 }
             case enumState.Wander:
                 {
-                    GetComponent<Animator>().SetBool("Walk", true);
                     agent.SetDestination(RandomSphere(gameObject.transform.position, wanderRange));
                     if (agent.remainingDistance <= agent.stoppingDistance)
                     {
