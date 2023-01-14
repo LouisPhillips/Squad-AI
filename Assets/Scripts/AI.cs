@@ -205,8 +205,6 @@ public class AI : MonoBehaviour
         Transform child = transform.Find("Selected");
         if (selected)
         {
-
-
             child.gameObject.SetActive(true);
 
         }
