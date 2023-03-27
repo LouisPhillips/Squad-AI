@@ -168,8 +168,6 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
-        Debug.Log("pos" + pos_selected + "  aSelected" + aSelected);
-
 
         if(Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hitData, Mathf.Infinity))
         {
@@ -224,6 +222,7 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
+
        /* if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out RaycastHit hitData, Mathf.Infinity))
         {
             if (aSelected && !commandWheel.activeSelf && !sCommandWheel.activeSelf)
